@@ -14,10 +14,16 @@
   </head>
   <body>
     <div id="display"></div>
-    <p class="pure-form">
-      <input type="text" id="player_name">
-      <input class="pure-button" type="button" value="プレイヤーを追加" onclick="add_player()">
-    </p>
+    <div class="pure-form">
+      <p>
+        <input type="text" id="player_name">
+        <input class="pure-button" type="button" value="プレイヤーを追加" onclick="add_player()">
+      </p>
+      <p>
+        <label for="audio">効果音：</label>
+        <select id="audio"></select>
+      </p>
+    </div>
     <script src="./king-debt-manager.js"></script>
   </body>
 </html>

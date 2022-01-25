@@ -1,5 +1,12 @@
 let players = {};
-let se = new Audio("chakin.mp3")
+let audio_files = ["借金①", "借金②", "借金③", "大破産", "レジスター", "爆発"];
+let sounds = {};
+
+for (n in audio_files){
+  let filename = audio_files[n];
+  sounds[filename] = new Audio("audio/" + filename + ".mp3");
+  document.getElementById("audio").innerHTML += "<option value=\"" + filename + "\">" + filename + "</option>";
+}
 
 function add_player(){
   let element = document.getElementById("player_name");
@@ -61,6 +68,8 @@ function minus(player, opponent){
 };
 
 function play_se(){
+  let element = document.getElementById("audio");
+  let se = sounds[element.value];
   se.currentTime = 0;
   se.play();
 };
